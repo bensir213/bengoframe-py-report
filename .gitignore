@@ -3,3 +3,4 @@
 PIPENV_VENV_IN_PROJECT/*
 report/*
 __pycache__
+screenshots
