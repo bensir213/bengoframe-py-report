@@ -1,5 +1,7 @@
 # BenGoFrame Python Report
 
+![](imgs/image.jpg)
+
 BenGoFrame Python Report is created for the automation test report
 
 You can log the test details for the test steps so that you can check the details in the report
@@ -12,11 +14,11 @@ Please do not delete or modify the fields in template folder
 
 Pre-views examples:
 
-![](imgs\dashboard.PNG)
+![](imgs/dashboard.PNG)
 
-![](imgs\Summary.PNG)
+![](imgs/Summary.PNG)
 
-![](imgs\TestDetails.PNG)
+![](imgs/TestDetails.PNG)
 
 Installation: 
 
