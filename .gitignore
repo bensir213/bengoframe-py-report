@@ -1,0 +1,4 @@
+# Editor directories and files
+.idea
+PIPENV_VENV_IN_PROJECT/*
+report/*

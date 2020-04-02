@@ -1,0 +1,233 @@
+{
+  "testConfig": {
+    "testSuite": "Ben",
+    "gridAddress": "http://localhost:4444/wd/hub",
+    "logLevel": "Info",
+    "threadCount": "2",
+    "database": "Cucumber-QA",
+    "startTime": "2020-03-05 21:13:56",
+    "endTime": "2020-03-05 22:13:56",
+    "takeTimes": "1 hs 0 mins 0 ss",
+    "reRun": "No"
+  },
+  "casesChart": {
+    "totalCases": "12",
+    "passed": "6",
+    "failed": "6"
+  },
+  "stepsChart": {
+    "totalSteps": "120",
+    "passed": "50",
+    "failed": "70"
+  },
+  "featureSummary": [
+    {
+      "featureName": "TestModules",
+      "total": "15",
+      "passed": "10",
+      "failed": "10",
+      "passRate": "20%"
+    },
+    {
+      "featureName": "TestModules",
+      "total": "15",
+      "passed": "10",
+      "failed": "10",
+      "passRate": "20%"
+    },
+    {
+      "featureName": "Test1",
+      "total": "15",
+      "passed": "10",
+      "failed": "10",
+      "passRate": "20%"
+    },
+    {
+      "featureName": "Test2",
+      "total": "15",
+      "passed": "10",
+      "failed": "10",
+      "passRate": "20%"
+    },
+    {
+      "featureName": "Test3",
+      "total": "15",
+      "passed": "10",
+      "failed": "10",
+      "passRate": "20%"
+    },
+    {
+      "featureName": "Test4",
+      "total": "15",
+      "passed": "10",
+      "failed": "10",
+      "passRate": "20%"
+    }
+  ],
+  "testDetails": [
+    {
+      "testName": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "featureName": "TestModules",
+      "status": "passed",
+      "datas": { "url": "dwsdww", "selenium": "dwsd" },
+      "timeTakes": "01 hs 23 mins 33 ss",
+      "steps": [
+        {
+          "stepDescription": "Helldwdwdwdo",
+          "stepStatus": "passed",
+          "data": "123",
+          "findBy": "asdasd",
+          "stepDetails": "asdasdasd",
+          "screenShot": ""
+        },
+        {
+          "stepDescription": "Hqwdqwdqwello2",
+          "stepStatus": "failed",
+          "data": "334",
+          "findBy": "asdasd",
+          "stepDetails": "asdasdasd",
+          "screenShot": "tes111.png"
+        },
+        {
+          "stepDescription": "Helqwdqwqwqwlo3",
+          "stepStatus": "passed",
+          "data": "223",
+          "findBy": "asdasd",
+          "stepDetails": "asdasdasd",
+          "screenShot": "tes111.png"
+        },
+        {
+          "stepDescription": "Hellqwdsdasdo4",
+          "stepStatus": "failed",
+          "data": "564",
+          "findBy": "asdasd",
+          "stepDetails": "asdasdasd",
+          "screenShot": "tes111.png"
+        }
+      ]
+    },
+    {
+      "testName": "B",
+      "featureName": "TestModules",
+      "status": "passed",
+      "datas": { "url": "asdasd", "selenium": "1wwe23" },
+      "timeTakes": "01 hs 23 mins 33 ss",
+      "steps": [
+        {
+          "stepDescription": "Helqqqqqqqqqlo",
+          "stepStatus": "passed",
+          "data": "1232222222222222222",
+          "findBy": "asdasd",
+          "stepDetails": "asdasdasd",
+          "screenShot": "tes111.png"
+        },
+        {
+          "stepDescription": "Helxxxxxxlo2",
+          "stepStatus": "failed",
+          "data": "334",
+          "findBy": "asdasd",
+          "stepDetails": "asdasdasd",
+          "screenShot": "tes111.png"
+        },
+        {
+          "stepDescription": "Helxxxxxxxxxlo3",
+          "stepStatus": "passed",
+          "data": "223",
+          "findBy": "asdasd",
+          "stepDetails": "asdasdasd",
+          "screenShot": "tes111.png"
+        },
+        {
+          "stepDescription": "Helldsdxxxxo4",
+          "stepStatus": "failed",
+          "data": "564",
+          "findBy": "asdasd",
+          "stepDetails": "asdasdasd",
+          "screenShot": "tes111.png"
+        }
+      ]
+    },
+    {
+      "testName": "C",
+      "featureName": "Test2",
+      "status": "passed",
+      "datas": { "url": "wqqsasdww", "selenium": "123" },
+      "timeTakes": "01 hs 23 mins 33 ss",
+      "steps": [
+        {
+          "stepDescription": "Hello",
+          "stepStatus": "passed",
+          "data": "123",
+          "findBy": "asdasd",
+          "stepDetails": "asdasdasd",
+          "screenShot": "tes111.png"
+        },
+        {
+          "stepDescription": "Hewwdwdwdsdllo2",
+          "stepStatus": "passed",
+          "data": "334",
+          "findBy": "asdasd",
+          "stepDetails": "asdasdasd",
+          "screenShot": "tes111.png"
+        },
+        {
+          "stepDescription": "Hellwdwdwo3",
+          "stepStatus": "passed",
+          "data": "223",
+          "findBy": "asdasd",
+          "stepDetails": "asdasdasd",
+          "screenShot": "tes111.png"
+        },
+        {
+          "stepDescription": "wdwdwdsd",
+          "stepStatus": "passed",
+          "data": "564",
+          "findBy": "asdasd",
+          "stepDetails": "asdasdasd",
+          "screenShot": "tes111.png"
+        }
+      ]
+    },
+    {
+      "testName": "D",
+      "featureName": "Test3",
+      "status": "passed",
+      "datas": { "url": "ddsdwwdw", "selenium": "123" },
+      "timeTakes": "01 hs 23 mins 33 ss",
+      "steps": [
+        {
+          "stepDescription": "Hewwwwllo",
+          "stepStatus": "passed",
+          "data": "123",
+          "findBy": "asdasd",
+          "stepDetails": "asdasdasd",
+          "screenShot": "tes111.png"
+        },
+        {
+          "stepDescription": "Helwwwwwwlo2",
+          "stepStatus": "passed",
+          "data": "334",
+          "findBy": "asdasd",
+          "stepDetails": "asdasdasd",
+          "screenShot": "tes111.png"
+        },
+        {
+          "stepDescription": "Helwwwwwwlo3",
+          "stepStatus": "passed",
+          "data": "223",
+          "findBy": "asdasd",
+          "stepDetails": "asdasdasd",
+          "screenShot": "tes111.png"
+        },
+        {
+          "stepDescription": "Helwwwwwwwwwlo4",
+          "stepStatus": "failed",
+          "data": "564",
+          "findBy": "asdasd",
+          "stepDetails": "asdasdasd",
+          "screenShot": "tes111.png"
+        }
+      ]
+    }
+  ]
+}
