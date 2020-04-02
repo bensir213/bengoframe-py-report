@@ -2,3 +2,4 @@
 .idea
 PIPENV_VENV_IN_PROJECT/*
 report/*
+__pycache__
