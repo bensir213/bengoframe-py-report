@@ -25,13 +25,13 @@ class TestAppender:
         """
         if not step_status:
             step_status = "failed"
-        elif not step_description:
+        if not step_description:
             step_description = "N/A"
-        elif not use_data:
+        if not use_data:
             use_data = "N/A"
-        elif not find_by:
+        if not find_by:
             find_by = "N/A"
-        elif not step_details:
+        if not step_details:
             step_details = "N/A"
         wrap_step = {"stepDescription": step_description,
                      "stepStatus": step_status,

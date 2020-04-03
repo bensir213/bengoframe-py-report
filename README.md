@@ -2,7 +2,7 @@
 
 ![](imgs/image.jpg)
 
-BenGoFrame Python Report is created for the automation test report
+BenGoFrame Python Report is created for the automation test
 
 You can log the test details for the test steps so that you can check the details in the report
 
@@ -26,8 +26,6 @@ Installation:
 # Use pipenv to install Pipfile
 # pipenv install --skip-lock
 [packages]
-behave = "*"
-selenium = "*"
 beautifulsoup4 = "*"
 lxml = "*"
 # If you have no pipenv. 
@@ -36,11 +34,11 @@ lxml = "*"
 
 `testData.json` is the copy file to display all test results
 
-You can't modify the formatted JSON below keys
-
 If you don't know what the values should be. Please input the "" into the values 
 
 For more details. Please read the `src/report_creator.py` and `src/tests_appender.py`
+
+Please note that you can modify the `src/report_creator.py` and `src/tests_appender.py` or `src/report_creator.py` and `src/tests_appender.py` by your logical working flows. But you can't modify the formatted JSON below keys, it means that you have to follow below format to generate the JSON file. Also please follow the `src/report_creator.py func _modifyhtml()` to set the testData.json into the index.html.
 
 ```json
 # Example: testData.json 
@@ -141,5 +139,27 @@ For more details. Please read the `src/report_creator.py` and `src/tests_appende
 }
 ```
 
+Screenshot:
 
+if your test step has screenshots. Please save them to a specify folder and name the screenshot file by a unique name for each. And then append the name into the test step.
+
+```json
+# testData.json screenshot examples:
+"steps": [
+    {
+          "stepDescription": "This is for test2",
+          "stepStatus": "passed",
+          "data": "selenium2",
+          "findBy": "xpath=id",
+          "stepDetails": "details2",
+          "screenShot": "{screenshot_name.png}"
+     }
+	]
+# Do not give a full path to the name. Just give it to file_name.png
+# When you saved all screenshot file into a specify folder. 
+# Please call the ReportCreator.completed({your screenshot folder})
+# It will copy and rename to the output_report/static/imgs
+```
+
+If you don't have screenshot.  Just let it go.
 
