@@ -38,7 +38,7 @@ If you don't know what the values should be. Please input the "" into the values
 
 For more details. Please read the `src/report_creator.py` and `src/tests_appender.py`
 
-Please note that you can modify the `src/report_creator.py` and `src/tests_appender.py` or `src/report_creator.py` and `src/tests_appender.py` by your logical working flows. But you can't modify the formatted JSON below keys, it means that you have to follow below format to generate the JSON file. Also please follow the `src/report_creator.py func _modifyhtml()` to set the testData.json into the index.html.
+Please note that you can modify the `src/report_creator.py` and `src/tests_appender.py` or create `src/report_creator.py` and `src/tests_appender.py` by your logical working flows. But you can't modify the formatted JSON below keys, it means that you have to follow below format to generate the JSON file. Also please follow the `src/report_creator.py func _modifyhtml()` to set the testData.json into the index.html.
 
 ```json
 # Example: testData.json 
