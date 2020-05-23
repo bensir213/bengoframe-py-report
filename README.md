@@ -28,8 +28,14 @@ Installation:
 [packages]
 beautifulsoup4 = "*"
 lxml = "*"
+
 # If you have no pipenv. 
 # Please copy them to requirenments.txt and pip install -r requirenments.txt
+
+# Please use python 3.8 to run the example.py
+# If you want to create your own creator and appender. Do not use example.py to show the test report
+[requires]
+python_version = "3.8"
 ```
 
 `testData.json` is the copy file to display all test results
