@@ -44,7 +44,7 @@ def single_run():
     # Completed if you finished your test2
     test2.completed()
     # Completed if you finished your tests
-    reporter.completed("../screenshots")
+    reporter.completed(add_excel=True, screenshot_folder="../screenshots")
 
 
 def test_runner(reporter_object, number):
@@ -86,7 +86,7 @@ def multiple_run():
             data = future.result()
             print(f"{data}")
     # Input the screenshots folder. Please note the folder is up to what you have already created
-    reporter.completed("../screenshots")
+    reporter.completed(add_excel=True, screenshot_folder="../screenshots")
 
 
 if __name__ == '__main__':

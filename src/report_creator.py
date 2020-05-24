@@ -4,6 +4,7 @@ from threading import Lock
 import json
 from bs4 import BeautifulSoup
 import os
+from excel_creator import ExcelCreator
 
 root_path = os.path.dirname(__file__)
 
@@ -26,6 +27,7 @@ class ReportCreator:
         :param output_path: Required
         :param start_time: string and Format (%Y-%m-%d %H:%M:%S).
         Will generate the start time when you create the reporter object if you don't input the start_time
+        Up to you to set the start time. It should be at Hook @before_all/@before_all_test
         """
         self.output_path = output_path
         self.suite_name = suite_name
@@ -79,12 +81,13 @@ class ReportCreator:
             self.lock.release()
             raise e
 
-    def completed(self, screenshot_folder=""):
+    def completed(self, add_excel=False, screenshot_folder=""):
         time_format = '%Y-%m-%d %H:%M:%S'
         try:
             if not self.testDetails:
                 raise Exception("You need create TestAppender and log test steps")
             # Reporter will log the end time when user call completed
+            # Up to you to set the end time. At below way is set the end time at Hook @after_all
             self.end_time = datetime.now().strftime(time_format)
             self.config['endTime'] = self.end_time
             take_times = str(
@@ -106,6 +109,9 @@ class ReportCreator:
                 shutil.copytree(f'{screenshot_folder}', f'{self.output_path}/static/img', dirs_exist_ok=True)
             # Set the json into the html
             self._modify_html()
+            if add_excel:
+                obj_excel = ExcelCreator(f"{self.output_path}/testData.json", f"{self.output_path}/TestReport.xlsx")
+                obj_excel.save()
         except Exception:
             raise Exception("Create report failed. Please make sure you had appended the test steps")
 

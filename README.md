@@ -28,6 +28,7 @@ Installation:
 [packages]
 beautifulsoup4 = "*"
 lxml = "*"
+openpyxl = "*"
 
 # If you have no pipenv. 
 # Please copy them to requirenments.txt and pip install -r requirenments.txt
@@ -48,8 +49,8 @@ Please note that you can modify the `src/report_creator.py` and `src/tests_appen
 
 ```json
 # Example: testData.json 
-{
-	"testConfig": {
+{   
+    "testConfig": {
     "testSuite": "Ben",
     "gridAddress": "http://localhost:4444/wd/hub",
     "logLevel": "INFO",
@@ -147,7 +148,7 @@ Please note that you can modify the `src/report_creator.py` and `src/tests_appen
 
 Screenshot:
 
-if your test step has screenshots. Please save them to a specify folder and name the screenshot file by a unique name for each. And then append the name into the test step.
+If your test step has screenshots. Please save them to a specify folder and name the screenshot file by a unique name for each. And then append the name into the test step.
 
 ```json
 # testData.json screenshot examples:
@@ -169,3 +170,23 @@ if your test step has screenshots. Please save them to a specify folder and name
 
 If you don't have screenshot.  Just let it go.
 
+Excel Report:
+
+If you want to see the summary in excel. Please see example.py:
+
+```python
+# Create the reporter object
+    reporter = ReportCreator(params)
+# Set true argument in func completed:
+    reporter.completed(add_excel=True, screenshot_folder="{your screenshot folder}")
+```
+
+Summary details:
+
+![](imgs\excel-1.PNG)
+
+Test details:
+
+This function is disable default. If you want to see the test details. Please fix comment on self.ws_test_details and self._write_details()
+
+![](imgs\excel-2.PNG)
