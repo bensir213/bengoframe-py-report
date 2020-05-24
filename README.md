@@ -183,10 +183,10 @@ If you want to see the summary in excel. Please see example.py:
 
 Summary details:
 
-![](imgs\excel-1.PNG)
+![](imgs/excel-1.PNG)
 
 Test details:
 
 This function is disable default. If you want to see the test details. Please fix comment on self.ws_test_details and self._write_details()
 
-![](imgs\excel-2.PNG)
+![](imgs/excel-2.PNG)
