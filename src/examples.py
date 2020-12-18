@@ -103,8 +103,43 @@ def multiple_run():
     reporter.completed(add_excel=True, screenshot_folder="../screenshots")
 
 
+def api_run():
+    # Set the default config
+    suite_name = "Ben"
+    grid_address = "N/A"
+    log_level = "INFO"
+    thread_count = "2"
+    database = "Cucumber-QA"
+    re_run = "No"
+    # Set the output path
+    output_path = "../report/api"
+    # Create the reporter object
+    reporter = ReportCreator(suite_name=suite_name, grid_address=grid_address,
+                             log_level=log_level,
+                             thread_count=thread_count, database=database,
+                             re_run=re_run, output_path=output_path)
+    # Create a test object to appender the logs
+    test = TestAppender(test_name="ApiHello", feature_name="ApiFeature",
+                        reporter=reporter, client="api")
+    test.start_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    test.appender_step(step_status="passed", step_description="Request url:/baidu",
+                       step_details="Current request full url: http://www.baidu.com")
+    test.set_test_data(datas={"api": "api"})
+    # You have to add the request api details for each case:
+    api_details = [
+        {"method": "GET", "url": "http://www.baidu.com", "body": "{\"body\":\"ssss\"}",
+         "header": "{\"header\":\"ssss\"}",
+         "responseHeader": "{\"responseHeade\":\"ssss\"}",
+         "responseBody": "{\"responseBody\":\"ssss\"}"}]
+    test.set_api_details(api_details)
+    test.completed()
+    reporter.completed(add_excel=False)
+
+
 if __name__ == '__main__':
     # Single thread to generate the report
-    single_run()
-    # Multiple thread to generate the report
-    multiple_run()
+    # single_run()
+    # # Multiple thread to generate the report
+    # multiple_run()
+    # Api run
+    api_run()

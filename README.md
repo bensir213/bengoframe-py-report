@@ -20,6 +20,8 @@ Pre-views examples:
 
 ![](imgs/TestDetails.PNG)
 
+![](imgs/API_Details.png)
+
 Installation: 
 
 ```python
@@ -144,6 +146,124 @@ Please note that you can modify the `src/report_creator.py` and `src/tests_appen
     }
   ]
 }
+```
+
+```json
+# Example: Api
+{
+  "testConfig": {
+    "testSuite": "Ben",
+    "gridAddress": "N/A",
+    "logLevel": "Info",
+    "threadCount": "2",
+    "database": "Cucumber-QA",
+    "startTime": "2020-03-05 21:13:56",
+    "endTime": "2020-03-05 22:13:56",
+    "takeTimes": "1 hs 0 mins 0 ss",
+    "reRun": "No"
+  },
+  "casesChart": {
+    "totalCases": "12",
+    "passed": "6",
+    "failed": "6"
+  },
+  "stepsChart": {
+    "totalSteps": "120",
+    "passed": "50",
+    "failed": "70"
+  },
+  "featureSummary": [
+    {
+      "featureName": "TestModules",
+      "total": "15",
+      "passed": "10",
+      "failed": "10",
+      "passRate": "20%"
+    },
+    {
+      "featureName": "TestModules",
+      "total": "15",
+      "passed": "10",
+      "failed": "10",
+      "passRate": "20%"
+    },
+    {
+      "featureName": "Test1",
+      "total": "15",
+      "passed": "10",
+      "failed": "10",
+      "passRate": "20%"
+    },
+    {
+      "featureName": "Test2",
+      "total": "15",
+      "passed": "10",
+      "failed": "10",
+      "passRate": "20%"
+    },
+    {
+      "featureName": "Test3",
+      "total": "15",
+      "passed": "10",
+      "failed": "10",
+      "passRate": "20%"
+    },
+    {
+      "featureName": "Test4",
+      "total": "15",
+      "passed": "10",
+      "failed": "10",
+      "passRate": "20%"
+    }
+  ],
+  "testDetails": [
+    {
+      "testName": "HelloWorld",
+      "client": "api",
+      "featureName": "TestModules",
+      "status": "passed",
+      "datas": { "url": "dwsdww", "selenium": "dwsd" },
+      "details": [
+        {
+          "body": "{}",
+          "header": "{}",
+          "method": "GET",
+          "url": "{}",
+          "responseBody": "{}",
+          "responseHeader": "{}"
+        }
+      ],
+      "timeTakes": "01 hs 23 mins 33 ss",
+      "steps": [
+        {
+          "stepDescription": "Helldwdwdwdo",
+          "stepStatus": "passed",
+          "data": "123",
+          "stepDetails": "asdasdasd"
+        },
+        {
+          "stepDescription": "Hqwdqwdqwello2",
+          "stepStatus": "failed",
+          "data": "334",
+          "stepDetails": "asdasdasd"
+        },
+        {
+          "stepDescription": "Helqwdqwqwqwlo3",
+          "stepStatus": "passed",
+          "data": "223",
+          "stepDetails": "asdasdasd"
+        },
+        {
+          "stepDescription": "Hellqwdsdasdo4",
+          "stepStatus": "failed",
+          "data": "564",
+          "stepDetails": "asdasdasd"
+        }
+      ]
+    }
+  ]
+}
+
 ```
 
 Screenshot:

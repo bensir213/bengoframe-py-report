@@ -66,7 +66,7 @@
   ],
   "testDetails": [
     {
-      "testName": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "testName": "HelloWorld",
       "featureName": "TestModules",
       "status": "passed",
       "datas": { "url": "dwsdww", "selenium": "dwsd" },

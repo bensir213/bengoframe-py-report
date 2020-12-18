@@ -89,7 +89,8 @@ class ReportCreator:
             if not self.testDetails:
                 raise Exception("You need create TestAppender and log test steps")
             # Reporter will log the end time when user call completed
-            # Up to you to set the end time. At below way is set the end time at Hook @after_all
+            # Up to you to set the end time.
+            # At below way is set the end time at Hook @after_all
             self.end_time = datetime.now().strftime(time_format)
             self.config['endTime'] = self.end_time
             take_times = str(
@@ -108,7 +109,8 @@ class ReportCreator:
             self._create_report_to()
             if not screenshot_folder:
                 print(
-                    "Your report will not display the screenshot if you didn't package your screenshot folder")
+                    "Your report will not display the screenshot "
+                    "if you didn't package your screenshot folder")
             else:
                 # Copy the input screenshot folder to report path src/static/img
                 shutil.copytree(f'{screenshot_folder}', f'{self.output_path}/static/img',
@@ -119,9 +121,10 @@ class ReportCreator:
                 obj_excel = ExcelCreator(f"{self.output_path}/testData.json",
                                          f"{self.output_path}/TestReport.xlsx")
                 obj_excel.save()
-        except Exception:
+        except Exception as e:
             raise Exception(
-                "Create report failed. Please make sure you had appended the test steps")
+                f"Create report failed. "
+                f"Please make sure you had appended the test steps: {str(e)}")
 
     def _create_report_to(self):
         try:
@@ -222,7 +225,7 @@ class ReportCreator:
 
 
 class TestAppender:
-    def __init__(self, test_name, feature_name, reporter):
+    def __init__(self, test_name, feature_name, reporter, client=None):
         self.test_name = test_name
         self.feature_name = feature_name
         self.start_time = None  # Please input the start time by yourself
@@ -232,10 +235,14 @@ class TestAppender:
         self.steps = []
         self.reporter = reporter
         self.test = {}
+        if client is None:
+            self.client = "N/A"
+        else:
+            self.client = client
+        self.api_details = []
 
     def appender_step(self, step_status="", step_description="", use_data="", find_by="",
-                      step_details="",
-                      screenshot_name=""):
+                      step_details="", screenshot_name=""):
         """
         :param step_description: Optional field -- To log the description for current step
         :param step_status: Required field -- To log current step status
@@ -280,10 +287,23 @@ class TestAppender:
                 "datas": self.datas,
                 "timeTakes": self.time_takes,
                 "steps": self.steps}
+            if self.client is not None:
+                self.test["client"] = self.client
+            if len(self.api_details) > 0:
+                self.test["details"] = self.api_details
             # Add the test details to the reporter
             self.reporter.add_test_details(self.test)
         except Exception as e:
             raise e
+
+    def set_api_details(self, details: list):
+        """
+         :param details: Optional. To log all request details for each
+        """
+        if type(details) == list:
+            self.api_details = details
+        else:
+            self.api_details = []
 
     def set_test_data(self, datas: dict):
         """
@@ -295,7 +315,8 @@ class TestAppender:
             # Set test data unSuccess
             self.datas = {}
             print(
-                "Your input datas type is not correct. Case data set will set to {}. Please use dict by next time")
+                "Your input datas type is not correct. Case data set will set to {}. "
+                "Please use dict by next time")
 
     def _set_case_status(self):
         if self.steps:
@@ -310,7 +331,8 @@ class TestAppender:
 
 # Create summary excel report after modify html
 # Only display the summary
-# If you want to see the test details. Please fix comment on self.ws_test_details and self._write_details()
+# If you want to see the test details.
+# Please fix comment on self.ws_test_details and self._write_details()
 class ExcelCreator:
     def __init__(self, json_path, out_put_path):
         self.json_path = json_path
