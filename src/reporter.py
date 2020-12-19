@@ -300,8 +300,24 @@ class TestAppender:
         """
          :param details: Optional. To log all request details for each
         """
+        temp = []
         if type(details) == list:
-            self.api_details = details
+            for d in details:
+                keys_list = d.keys()
+                if "body" not in keys_list:
+                    d["body"] = "N/A"
+                if "header" not in keys_list:
+                    d["header"] = "N/A"
+                if "url" not in keys_list:
+                    d["url"] = "N/A"
+                if "method" not in keys_list:
+                    d["method"] = "N/A"
+                if "responseBody" not in keys_list:
+                    d["responseBody"] = "N/A"
+                if "responseHeader" not in keys_list:
+                    d["responseHeader"] = "N/A"
+                temp.append(d)
+            self.api_details = temp
         else:
             self.api_details = []
 
