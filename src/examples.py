@@ -138,8 +138,8 @@ def api_run():
 
 if __name__ == '__main__':
     # Single thread to generate the report
-    # single_run()
+    single_run()
     # # Multiple thread to generate the report
-    # multiple_run()
-    # Api run
+    multiple_run()
+    # # Api run
     api_run()

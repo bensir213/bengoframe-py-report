@@ -111,6 +111,8 @@ class ReportCreator:
                 print(
                     "Your report will not display the screenshot "
                     "if you didn't package your screenshot folder")
+            elif not os.path.exists(screenshot_folder):
+                print("Screenshot folder not exist")
             else:
                 # Copy the input screenshot folder to report path src/static/img
                 shutil.copytree(f'{screenshot_folder}', f'{self.output_path}/static/img',
@@ -122,9 +124,7 @@ class ReportCreator:
                                          f"{self.output_path}/TestReport.xlsx")
                 obj_excel.save()
         except Exception as e:
-            raise Exception(
-                f"Create report failed. "
-                f"Please make sure you had appended the test steps: {str(e)}")
+            raise e
 
     def _create_report_to(self):
         try:
@@ -207,9 +207,6 @@ class ReportCreator:
 
     def _modify_html(self):
         try:
-            # To make sure json always string
-            if self.testAll is not str:
-                self.testAll = str(self.testAll)
             test_data_json = json.dumps(self.testAll, indent=2)
             with open(f'{self.output_path}/testData.json', mode='w') as f:
                 f.write(test_data_json)
