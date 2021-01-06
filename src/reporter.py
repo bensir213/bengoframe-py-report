@@ -309,6 +309,8 @@ class TestAppender:
                     d["url"] = "N/A"
                 if "method" not in keys_list:
                     d["method"] = "N/A"
+                if "statusCode" not in keys_list:
+                    d["statusCode"] = "N/A"
                 if "responseBody" not in keys_list:
                     d["responseBody"] = "N/A"
                 if "responseHeader" not in keys_list:

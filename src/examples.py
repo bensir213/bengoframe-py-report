@@ -128,6 +128,7 @@ def api_run():
     # You have to add the request api details for each case:
     api_details = [
         {"method": "GET", "url": "http://www.baidu.com", "body": "{\"body\":\"ssss\"}",
+         "statusCode": "200",
          "header": "{\"header\":\"ssss\"}",
          "responseHeader": "{\"responseHeade\":\"ssss\"}",
          "responseBody": "{\"responseBody\":\"ssss\"}"}]
